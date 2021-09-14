@@ -1,29 +1,44 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React, { useEffect, useState } from 'react'
+import CanvasContainer from '../THREE/Canvas'
+import Content from '../components/Content'
+import MainHeader from '../components/MainHeader'
+import { setTextAndCubeColor } from '../utils'
+import '../styles/base.css'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+const App = () => {
+  const [mouseIsOver, setMouseIsOver] = useState(false)
+  const [tab, setTab] = useState(0)
+  const [showSideField, setShowSideField] = useState(false)
+  const [color, setColor] = useState('#0077ff')
+  const [text, setText] = useState('Portfolio')
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+  useEffect(() => {
+    setTextAndCubeColor(tab, setText, setColor)
+  }, [tab])
 
-export default IndexPage
+  return (
+    <section className='main__section'>
+      <CanvasContainer
+        mouseIsOver={mouseIsOver}
+        setMouseIsOver={setMouseIsOver}
+        showSideField={showSideField}
+        setShowSideField={setShowSideField}
+        tab={tab}
+        setTab={setTab}
+        color={color}
+      />
+      <MainHeader
+        setShowSideField={setShowSideField}
+        mouseIsOver={mouseIsOver}
+        setMouseIsOver={setMouseIsOver}
+        text={text}
+      />
+      {showSideField ? (
+        <Content tab={tab} setShowSideField={setShowSideField} />
+      ) : null}
+    </section>
+  )
+}
+
+export default App
+

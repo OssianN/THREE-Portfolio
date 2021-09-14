@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: Montserrat;
+}
+
+#root {
+  color: #fd4db9;
+  /* background-color: #1f1f1f; */
+  background-color: white;
+}
+
+.main__section {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  /* background: linear-gradient(125deg, #ffc2e8, #fff 30%); */
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.main__background--bottom {
+  top: 50%;
+  right: 0;
+}
+
+.main__background--top {
+  top: -10%;
+  left: 0;
+  transform: rotateZ(180deg);
+}
+
+.main__h1 {
+  position: absolute;
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  transform: translateY(40vh);
+  height: max-content;
+  width: max-content;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 1s 0.8s;
+  z-index: 10;
+}
+
+.main__h1--show {
+  opacity: 1;
+}
+
+.main__h1--hide {
+  opacity: 0;
+}
+
+.main__h1-underline {
+  height: 5px;
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 100%;
+  transform: scaleX(0);
+  border-radius: 1rem;
+}
+
+.main__h1-underline--expand-span {
+  animation: expandSpan 1.5s forwards;
+}
+
+.content__container {
+  height: 100%;
+  width: calc(70vw - 2em);
+  padding: 1em;
+  opacity: 0;
+  margin: 0 auto;
+  overflow-y: scroll;
+  animation: contentLoader 1s 1.7s ease-in forwards;
+}
+
+.page-buttons__container {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  max-width: 370px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-buttons__button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  color: #00b1e7;
+  margin: 0 50px;
+  font-size: 2rem;
+  font-family: Montserrat;
+}
+
+.header-title--standard {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-size: 3rem;
+  max-width: 600px;
+}
+
+.bread-text--standard {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes expandSpan {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes contentLoader {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
