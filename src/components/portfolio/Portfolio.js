@@ -1,11 +1,14 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Anime from "react-anime"
+import anime from "animejs"
+import Card from "./Card"
+import AnimationSVG from "../AnimationSVG"
 import "./portfolio.css"
+import ProjectPage from "./ProjectPage"
 
 const Portfolio = () => {
-  const [index, setIndex] = useState(0)
+  const [flipped, setFlipped] = useState(false)
+  const [post, setPost] = useState(null)
   const query = useStaticQuery(
     graphql`
       {
@@ -28,6 +31,7 @@ const Portfolio = () => {
                   ...GatsbyContentfulFluid
                 }
               }
+              color
               order
             }
           }
@@ -35,40 +39,45 @@ const Portfolio = () => {
       }
     `
   )
-
   const data = query.allContentfulPortfolio.edges
 
-  const dataToJsx = data.map((post, i) => {
-    return (
-      <li className="portfolio__li" key={i}>
-        <Anime
-          easing="easeOutElastic"
-          duration={1000}
-          opacity={[".5", "1"]}
-          translateX={["250px", "0"]}
-          autoplay={true}
-        >
-          <article>
-            <Img
-              className="portfolio__img"
-              fluid={post.node.desktopImage.fluid}
-              loading="eager"
-            ></Img>
-          </article>
-        </Anime>
-      </li>
-    )
-  })
+  const common = {
+    targets: ".polymorph",
+    easing: "easeOutQuad",
+    duration: 600,
+    loop: false,
+  }
+
+  const handleClick = (post, i) => {
+    setFlipped(!flipped)
+    setPost({ ...post, i })
+    anime({
+      ...common,
+      points: flipped
+        ? [{ value: "215,110 0,110 206,106 215,0" }]
+        : [{ value: "215,110 0,110 0,0 215,0" }],
+    })
+  }
 
   return (
     <>
-      <ul className="portfolio__ul">{dataToJsx[index]}</ul>
-      <button
-        style={{ zIndex: "100", position: "absolute", top: 0 }}
-        onClick={() => setIndex(index + 1)}
-      >
-        next
-      </button>
+      {flipped && <ProjectPage post={post} handleClick={handleClick} />}
+      <div className="portfolio__container">
+        <AnimationSVG color={post?.node?.color} />
+        <ul className="portfolio__ul">
+          {data.map((post, i) => {
+            return (
+              <Card
+                key={i}
+                post={post}
+                i={i}
+                flipped={flipped}
+                handleClick={() => handleClick(post, i)}
+              />
+            )
+          })}
+        </ul>
+      </div>
     </>
   )
 }

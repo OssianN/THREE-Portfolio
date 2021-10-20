@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import * as THREE from "three"
-import { useSpring } from "react-spring"
-import { a } from "@react-spring/three"
+import { a, useSpring } from "@react-spring/three"
 
 const Cube = ({
   args,
@@ -12,7 +11,6 @@ const Cube = ({
   setTab,
 }) => {
   const [active, setActive] = useState(false)
-  const group = useRef(null)
 
   const handleClick = () => {
     setActive(!active)
@@ -21,13 +19,13 @@ const Cube = ({
 
   const { rotation } = useSpring({
     rotation: active
-      ? [THREE.Math.degToRad(180), 0, THREE.Math.degToRad(45)]
-      : [0, 1, 1],
+      ? [THREE.MathUtils.degToRad(315), 0, THREE.MathUtils.degToRad(45)]
+      : [THREE.MathUtils.degToRad(135), 0, THREE.MathUtils.degToRad(135)],
     config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 },
   })
 
   return (
-    <group ref={group} position={position}>
+    <group position={position}>
       <a.mesh
         castShadow
         receiveShadow

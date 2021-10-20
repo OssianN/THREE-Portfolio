@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import CanvasContainer from '../THREE/Canvas'
-import Content from '../components/Content'
-import MainHeader from '../components/MainHeader'
-import { setTextAndCubeColor } from '../utils'
-import '../styles/base.css'
+import React, { useEffect, useState } from "react"
+import CanvasContainer from "../THREE/Canvas"
+import Content from "../components/Content"
+import MainHeader from "../components/MainHeader"
+import { setTextAndCubeColor } from "../utils"
+import "../styles/base.css"
 
 const App = () => {
   const [mouseIsOver, setMouseIsOver] = useState(false)
   const [tab, setTab] = useState(0)
   const [showSideField, setShowSideField] = useState(false)
-  const [color, setColor] = useState('#0077ff')
-  const [text, setText] = useState('Portfolio')
+  const [color, setColor] = useState("#0077ff")
+  const [text, setText] = useState("Portfolio")
 
   useEffect(() => {
     setTextAndCubeColor(tab, setText, setColor)
   }, [tab])
 
   return (
-    <section className='main__section'>
+    <section className="main__section">
       <CanvasContainer
         mouseIsOver={mouseIsOver}
         setMouseIsOver={setMouseIsOver}
@@ -28,6 +28,7 @@ const App = () => {
         color={color}
       />
       <MainHeader
+        showSideField={showSideField}
         setShowSideField={setShowSideField}
         mouseIsOver={mouseIsOver}
         setMouseIsOver={setMouseIsOver}
@@ -41,4 +42,3 @@ const App = () => {
 }
 
 export default App
-

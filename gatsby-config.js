@@ -13,5 +13,14 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_DELIVERY,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `montserrat\:100,400,700`,
+        ],
+        display: 'swap'
+      }
+    }
   ],
 }

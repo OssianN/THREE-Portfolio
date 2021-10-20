@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react"
+import BackButton from './BackButton'
 
 const Layout = ({ setShowSideField, children }) => {
   const handleClick = () => {
@@ -6,8 +7,8 @@ const Layout = ({ setShowSideField, children }) => {
   }
 
   return (
-    <main className='content__container'>
-      <button onClick={handleClick} className='btn back__button'>Back</button>
+    <main className="content__container">
+      <BackButton handleClick={handleClick} color='#00b1e7' />
       {children}
     </main>
   )

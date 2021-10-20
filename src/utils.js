@@ -1,5 +1,5 @@
 export const setTextAndCubeColor = (tab, setText, setColor) => {
-  switch (tab % 4) {
+  switch (tab % 3) {
     case 0:
       setText('Portfolio')
       setColor('#0077ff')
@@ -11,10 +11,6 @@ export const setTextAndCubeColor = (tab, setText, setColor) => {
     case 2:
       setText('Skills')
       setColor('#ff0000')
-      break
-    case 3:
-      setText('Guestbook')
-      setColor('#00ff95')
       break
     default:
       break

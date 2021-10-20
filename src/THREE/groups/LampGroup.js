@@ -1,6 +1,6 @@
 import React from 'react'
-import LampCylinder from '../meshs/lamp-components/Cylinder'
-import LampCone from '../meshs/lamp-components/Cone'
+import LampCylinder from '../meshs/lamp/Cylinder'
+import LampCone from '../meshs/lamp/Cone'
 
 const LampGroup = () => {
   return (
