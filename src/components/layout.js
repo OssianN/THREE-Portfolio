@@ -2,6 +2,7 @@ import React from "react"
 import BackButton from './BackButton'
 
 const Layout = ({ setShowSideField, children }) => {
+  
   const handleClick = () => {
     setShowSideField(false)
   }
