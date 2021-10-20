@@ -4,6 +4,7 @@ import AnimationSVG from "../AnimationSVG"
 import "./about.css"
 
 const About = () => {
+  
   const common = {
     targets: ".polymorph",
     easing: "easeOutQuad",
