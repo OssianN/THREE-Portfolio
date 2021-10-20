@@ -4,8 +4,6 @@ import AnimationSVG from "../AnimationSVG"
 import "./about.css"
 
 const About = () => {
-  const [flipped, setFlipped] = useState(false)
-
   const common = {
     targets: ".polymorph",
     easing: "easeOutQuad",
