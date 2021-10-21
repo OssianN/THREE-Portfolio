@@ -24,15 +24,22 @@ const Room = ({
     setMouseIsOver(false)
   }
 
+  const responsivePosition = () => {
+    if (window && window.innerWidth < 450) {
+      return [-0, -2, -1]
+    }
+    return [-0, -2, 0]
+  }
+
   const { position } = useSpring({
-    position: showSideField ? [-0, -1, 13] : [-0, -2, 0],
+    position: showSideField ? [-0, -1, 13] : responsivePosition(),
     config: { mass: 1, tension: 2, friction: 1, precision: 0.1 },
   })
 
   return (
     <a.group position={position}>
       <pointLight castShadow position={[0, -0.5, 11]} />
-      <pointLight position={[-2, 0, 15]} />
+      <pointLight position={[0, 0, 15]} />
       <directionalLight position={[0, 1, 0]} intensity={0.3} />
       <LampGroup />
       <CharacterGroup mouseIsOver={mouseIsOver} />

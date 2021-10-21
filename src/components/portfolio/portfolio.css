@@ -56,7 +56,7 @@
   width: 100%;
   padding: 2em;
   z-index: 100;
-  animation: project-page 1s .5s ease-in forwards;
+  animation: project-page 1s 0.5s ease-in forwards;
 }
 
 .project__img {
@@ -145,7 +145,7 @@
   transition: 1s;
 }
 
-@media (min-width: 410px) {
+@media (min-width: 350px) {
   .project__back-button {
     height: 3rem;
     width: 3rem;
