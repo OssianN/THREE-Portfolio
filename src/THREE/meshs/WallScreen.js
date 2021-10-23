@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react"
 
-const Cube = ({ args, position }) => {
-  
+const Cube = ({ args, position, setShowSideField }) => {
+  const handleClick = () => {
+    setShowSideField(true)
+  }
+
   return (
-    <mesh castShadow position={position} >
-      <boxBufferGeometry attach='geometry' args={args} />
-      <meshStandardMaterial attach='material' color={'white'} />
+    <mesh castShadow position={position} onClick={handleClick}>
+      <boxBufferGeometry attach="geometry" args={args} />
+      <meshStandardMaterial attach="material" color={"white"} />
     </mesh>
   )
 }

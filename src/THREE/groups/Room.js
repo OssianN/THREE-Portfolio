@@ -13,6 +13,7 @@ const Room = ({
   mouseIsOver,
   setMouseIsOver,
   showSideField,
+  setShowSideField,
   setTab,
   color,
 }) => {
@@ -53,7 +54,11 @@ const Room = ({
       />
       <Text color="white" text="Ossian" position={[-4.55, 4, 6.1]} size={1.8} />
       <Wall color={"#00b1e7"} args={[15, 20, 0.1]} position={[0, 8, 6]} />
-      <WallScreen args={[3, 2, 0.3]} position={[0, 1.2, 6]} />
+      <WallScreen
+        args={[3, 2, 0.3]}
+        position={[0, 1.2, 6]}
+        setShowSideField={setShowSideField}
+      />
       <RoomPlane color={"#00b1e7"} />
     </a.group>
   )
