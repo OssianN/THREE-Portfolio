@@ -1,3 +1,5 @@
+@import './backButton.css';
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +20,6 @@ body,
 
 #root {
   color: #fd4db9;
-  /* background-color: #1f1f1f; */
   background-color: white;
 }
 
@@ -76,14 +77,18 @@ body,
 
 .header-title--standard {
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 3rem;
   max-width: 600px;
+  color: #252525;
+  line-height: 0.9;
 }
 
 .bread-text--standard {
   max-width: 600px;
   margin: 0 auto;
+  color: #3d3d3d;
+  line-height: 1.4;
 }
 
 .back__button {
@@ -96,6 +101,12 @@ body,
 
 .btn {
   background: transparent;
+}
+
+@media (min-width: 374px) {
+  .header-title--standard {
+    font-size: 4rem;
+  }
 }
 
 @keyframes expandSpan {

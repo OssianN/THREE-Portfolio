@@ -3,7 +3,7 @@ import React from "react"
 const BackButton = ({ handleClick, color }) => {
   return (
     <button
-      className="project__back-button btn"
+      className="back-button btn"
       onClick={handleClick}
       style={{ borderColor: color }}
     >

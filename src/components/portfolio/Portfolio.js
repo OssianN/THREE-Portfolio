@@ -39,6 +39,7 @@ const Portfolio = () => {
       }
     `
   )
+  
   const data = query.allContentfulPortfolio.edges
 
   const common = {

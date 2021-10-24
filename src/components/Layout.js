@@ -9,7 +9,7 @@ const Layout = ({ setShowSideField, children }) => {
 
   return (
     <main className="content__container">
-      <BackButton handleClick={handleClick} color='#00b1e7' />
+      <BackButton handleClick={handleClick} color='black' />
       {children}
     </main>
   )
