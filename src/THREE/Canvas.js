@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Canvas } from "@react-three/fiber"
 import Room from "./groups/Room"
 
@@ -11,12 +11,21 @@ const CanvasContainer = ({
   setTab,
   color,
 }) => {
+  const [pixelRatio, setPixelRatio] = useState(null)
+
+  useEffect(() => {
+    if (window) {
+      setPixelRatio(window.devicePixelRatio)
+    }
+  }, [])
+
   return (
     <Canvas
       invalidateFrameloop
       shadows
       camera={{ position: [0, 0, 20] }}
       style={{ position: "absolute" }}
+      pixelRatio={pixelRatio}
     >
       <fogExp2 attach="fog" args={["white", 0.03]} />
       <ambientLight intensity={0.5} color="73e3ff" />
