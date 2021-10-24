@@ -4,6 +4,7 @@
   height: 2rem;
   width: 2rem;
   border: 2px solid white;
+  z-index: 200;
 }
 
 .back-button__span-container {
