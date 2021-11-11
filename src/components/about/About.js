@@ -12,16 +12,23 @@ const About = () => {
         <Suspense fallback={null}>
           <Canvas
             camera={{ position: [5, 0, 2] }}
-            style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+              background:
+                "radial-gradient(circle, rgba(187, 105, 29, 0.52), rgba(187, 105, 29, 0.64) 50.42%)",
+            }}
           >
             <Stars />
           </Canvas>
           <div className="about__container">
             <div className="about__content">
-              <h1 className="header-title--standard">
+              <h1 className="header-title--standard" style={{ color: "white" }}>
                 A quick summary of my journey.
               </h1>
-              <p className="bread-text--standard">
+              <p className="bread-text--standard" style={{ color: "white" }}>
                 Human interaction and behavior has for a long time been an
                 interest of mine. With that interest in <i>mind</i>, I tailored
                 my education at Lund's university to result in two bachelor

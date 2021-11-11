@@ -37,7 +37,7 @@ const Stars = ({ color }) => {
         size={0.02}
         alphaMap={texture}
         transparent={true}
-        color={"black"}
+        color={"white"}
       />
     </points>
   )

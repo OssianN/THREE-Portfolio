@@ -4,7 +4,7 @@ import Body from "../meshs/character/Body"
 import Eyes from "../meshs/character/Eyes"
 import Limb from "../meshs/character/Limb"
 
-const CharacterGroup = ({ mouseIsOver }) => {
+const CharacterGroup = ({ color, mouseIsOver }) => {
   const [clicked, setClicked] = useState(false)
   const [eyesPosition, setEyesPosition] = useState(-0.12)
 
@@ -59,7 +59,7 @@ const CharacterGroup = ({ mouseIsOver }) => {
       rotation={rotation}
       onClick={handleClick}
     >
-      <Body />
+      <Body color={color} />
       <Eyes position={[-0.3, 0.3, 0.6]} eyesPosition={eyesPosition} />
       <Eyes position={[0.3, 0.3, 0.6]} eyesPosition={eyesPosition} />
       <Limb vectorObj={limb1} />

@@ -1,20 +1,17 @@
 .about__container {
   position: fixed;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 1) 36.13%,
-    rgba(163, 163, 163, 0)
-  );
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   margin: 0 auto;
   overflow-y: scroll;
+  background: radial-gradient(circle, rgb(255, 185, 120), transparent);
   z-index: -1;
 }
 
 .about__content {
   margin: 2em;
   margin-top: 8em;
+  color: white;
 }

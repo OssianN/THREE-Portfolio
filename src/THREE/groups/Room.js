@@ -1,6 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
 import { a, useSpring } from "@react-spring/three"
-
 import Wall from "../meshs/Wall"
 import Text from "../meshs/Text"
 import RoomPlane from "../meshs/RoomPlane"
@@ -17,6 +16,8 @@ const Room = ({
   setTab,
   color,
 }) => {
+  const [lampOn, setLampOn] = useState(true)
+
   const handleMouseOver = e => {
     setMouseIsOver(true)
   }
@@ -39,11 +40,15 @@ const Room = ({
 
   return (
     <a.group position={position}>
-      <pointLight castShadow position={[0, -0.5, 11]} />
-      <pointLight position={[0, 0, 15]} />
+      {lampOn && (
+        <>
+          <pointLight castShadow position={[0, -0.5, 11]} />
+          <pointLight position={[0, 0, 15]} />
+        </>
+      )}
       <directionalLight position={[0, 1, 0]} intensity={0.3} />
-      <LampGroup />
-      <CharacterGroup mouseIsOver={mouseIsOver} />
+      <LampGroup setLampOn={setLampOn} lampOn={lampOn} />
+      <CharacterGroup color={color} mouseIsOver={mouseIsOver} />
       <Cube
         args={[1, 1, 1]}
         position={[1.9, -0.5, 12]}
@@ -53,13 +58,13 @@ const Room = ({
         setTab={setTab}
       />
       <Text color="white" text="Ossian" position={[-4.55, 4, 6.1]} size={1.8} />
-      <Wall color={"#00b1e7"} args={[15, 20, 0.1]} position={[0, 8, 6]} />
+      <Wall color={color} args={[15, 20, 0.1]} position={[0, 8, 6]} />
       <WallScreen
         args={[3, 2, 0.3]}
         position={[0, 1.2, 6]}
         setShowSideField={setShowSideField}
       />
-      <RoomPlane color={"#00b1e7"} />
+      <RoomPlane color={color} />
     </a.group>
   )
 }
