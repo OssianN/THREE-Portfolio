@@ -1,3 +1,10 @@
 .test {
-  color: white
+  color: white;
+}
+
+.skill__canvas {
+  position: "absolute";
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

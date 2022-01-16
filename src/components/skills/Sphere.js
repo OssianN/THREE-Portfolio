@@ -1,11 +1,11 @@
 import React from "react"
 import { useSphere } from "@react-three/cannon"
 
-const Sphere = () => {
-  const position = [Math.random(), Math.random() * 35, 0]
+const Sphere = ({ i }) => {
+  const position = [Math.random() * 8 - 4, Math.random() * 200 + 10, 0]
 
   const [ref] = useSphere(() => ({
-    mass: 10,
+    mass: 1,
     position,
   }))
 

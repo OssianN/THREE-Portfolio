@@ -26,7 +26,7 @@ const Card = ({ post, handleClick, i }) => {
       <Anime
         easing="easeInOutExpo"
         duration={1000}
-        delay={i * 200 + 1300}
+        delay={i * 200}
         opacity={[".1", "1"]}
         translateX={["100vw", "0"]}
         autoplay={true}

@@ -72,7 +72,7 @@ body,
   padding: 2em;
   opacity: 0;
   margin: 0 auto;
-  animation: contentLoader 1s 1.5s ease-in forwards;
+  animation: contentLoader 1s ease-in forwards;
 }
 
 .header-title--standard {

@@ -47,7 +47,7 @@ const Room = ({
         </>
       )}
       <directionalLight position={[0, 1, 0]} intensity={0.3} />
-      <LampGroup setLampOn={setLampOn} lampOn={lampOn} />
+      <LampGroup setLampOn={setLampOn} />
       <CharacterGroup color={color} mouseIsOver={mouseIsOver} />
       <Cube
         args={[1, 1, 1]}

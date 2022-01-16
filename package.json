@@ -8,7 +8,7 @@
     "@react-spring/three": "^9.2.4",
     "@react-three/cannon": "^3.1.2",
     "@react-three/drei": "^7.7.0",
-    "@react-three/fiber": "^7.0.6",
+    "@react-three/fiber": "^7.0.21",
     "animejs": "^3.2.1",
     "gatsby": "^3.13.0",
     "gatsby-image": "^3.11.0",
@@ -39,7 +39,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
+    "start": "yarn clean && gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

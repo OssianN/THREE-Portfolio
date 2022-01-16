@@ -56,7 +56,7 @@
   width: 100%;
   padding: 2em;
   z-index: 100;
-  animation: project-page 1s 0.5s ease-in forwards;
+  animation: project-page 1s ease-in forwards;
 }
 
 .project__img {
