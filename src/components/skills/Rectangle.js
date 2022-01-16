@@ -10,18 +10,19 @@ const Rectangle = ({ args, item, i }) => {
   }
 
   const { x, color } = divideAreas(item)
-
   const position = [x, 7 + (args[0] + 0.2) * i - 2, 0]
+
   const [ref, api] = useBox(() => ({
     mass: 1,
     position,
-    sleepSpeedLimit: 1.2,
+    sleepSpeedLimit: 1.3,
     args,
   }))
 
   const handleClick = () => {
-    api.applyForce([0, 0, 0], [0, 0, 0])
+    api.applyForce([0, 0, -200], [0, 1, 0])
   }
+  console.log("rex")
 
   return (
     <mesh castShadow onClick={handleClick} ref={ref}>

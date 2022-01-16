@@ -1,9 +1,10 @@
-import React, { Suspense } from "react"
+import React, { Suspense, useState } from "react"
 import { Canvas } from "@react-three/fiber"
 import { Physics } from "@react-three/cannon"
 import SkillsPlane from "./SkillsPlane"
 import { OrbitControls } from "@react-three/drei"
 import SkillList from "./SkillList"
+import "./skills.css"
 
 const Skills = () => {
   const isSSR = typeof window === "undefined"
@@ -29,6 +30,16 @@ const Skills = () => {
     { skill: "Agile", area: "tools" },
   ]
 
+  const [loaded, setLoaded] = useState(false)
+
+  setTimeout(() => {
+    setLoaded(true)
+  }, 1450)
+
+  if (!loaded) {
+    return <></>
+  }
+
   return (
     <>
       {!isSSR && (
@@ -36,7 +47,14 @@ const Skills = () => {
           <Canvas
             shadows
             camera={{ position: [-2.5, -1, 5.5] }}
-            className="skill__canvas"
+            style={{
+              position: "absolute",
+              height: "100vh",
+              width: "100vw",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+            }}
           >
             <OrbitControls />
 
