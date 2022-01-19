@@ -3,10 +3,11 @@ import { a, useSpring } from "@react-spring/three"
 import Wall from "../meshs/Wall"
 import Text from "../meshs/Text"
 import RoomPlane from "../meshs/RoomPlane"
-import Cube from "../meshs/Cube"
+import Arrow from "../meshs/Arrow"
 import WallScreen from "../meshs/WallScreen"
 import LampGroup from "./LampGroup"
 import CharacterGroup from "./CharacterGroup"
+import HyperCube from "../meshs/HyperCube"
 
 const Room = ({
   mouseIsOver,
@@ -17,14 +18,7 @@ const Room = ({
   color,
 }) => {
   const [lampOn, setLampOn] = useState(true)
-
-  const handleMouseOver = e => {
-    setMouseIsOver(true)
-  }
-
-  const handleMouseLeave = () => {
-    setMouseIsOver(false)
-  }
+  const [spinCube, setSpinCube] = useState(false)
 
   const responsivePosition = () => {
     if (window && window.innerWidth < 450) {
@@ -49,12 +43,10 @@ const Room = ({
       <directionalLight position={[0, 1, 0]} intensity={0.3} />
       <LampGroup setLampOn={setLampOn} />
       <CharacterGroup color={color} mouseIsOver={mouseIsOver} />
-      <Cube
-        args={[1, 1, 1]}
-        position={[1.9, -0.5, 12]}
-        handleMouseOver={handleMouseOver}
-        handleMouseLeave={handleMouseLeave}
-        color={color}
+      <HyperCube setTab={setTab} spinCube={spinCube} />
+      <Arrow
+        setMouseIsOver={setMouseIsOver}
+        setSpinCube={setSpinCube}
         setTab={setTab}
       />
       <Text color="white" text="Ossian" position={[-4.55, 4, 6.1]} size={1.8} />

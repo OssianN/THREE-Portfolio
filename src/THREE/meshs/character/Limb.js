@@ -16,7 +16,7 @@ const Limb = ({ reference, vectorObj, rotation }) => {
     <mesh castShadow ref={reference} position={[0, 0, 0]} rotation={rotation}>
       <tubeBufferGeometry
         attach="geometry"
-        args={[path, 70, 0.04, 50, false]}
+        args={[path, 70, 0.08, 50, false]}
       />
       <meshStandardMaterial attach="material" color="white" />
     </mesh>

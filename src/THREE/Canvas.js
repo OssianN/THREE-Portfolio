@@ -4,15 +4,14 @@ import Room from "./groups/Room"
 
 const CanvasContainer = ({
   mouseIsOver,
+  setMouseIsOver,
   showSideField,
   setShowSideField,
-  setMouseIsOver,
   tab,
   setTab,
   color,
 }) => {
   const [pixelRatio, setPixelRatio] = useState(null)
-
   useEffect(() => {
     if (window) {
       setPixelRatio(window.devicePixelRatio)
@@ -22,6 +21,7 @@ const CanvasContainer = ({
   return (
     <Canvas
       invalidateFrameloop
+      // frameloop="demand"
       shadows
       camera={{ position: [0, 0, 20] }}
       style={{ position: "absolute" }}

@@ -22,7 +22,6 @@ const Rectangle = ({ args, item, i }) => {
   const handleClick = () => {
     api.applyForce([0, 0, -200], [0, 1, 0])
   }
-  console.log("rex")
 
   return (
     <mesh castShadow onClick={handleClick} ref={ref}>

@@ -3,7 +3,7 @@ import { useTexture } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import circle from "./alpha.png"
 
-const Stars = ({ color }) => {
+const Stars = () => {
   const mesh = useRef(null)
 
   const texture = useTexture(circle)

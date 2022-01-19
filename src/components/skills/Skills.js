@@ -30,16 +30,6 @@ const Skills = () => {
     { skill: "Agile", area: "tools" },
   ]
 
-  const [loaded, setLoaded] = useState(false)
-
-  setTimeout(() => {
-    setLoaded(true)
-  }, 1450)
-
-  if (!loaded) {
-    return <></>
-  }
-
   return (
     <>
       {!isSSR && (
