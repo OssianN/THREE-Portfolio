@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import BackButton from "./BackButton"
 
-const Layout = ({ setShowSideField, children }) => {
+const Layout = ({ setShowSideField, tab, children }) => {
   const [loaded, setLoaded] = useState(false)
 
   const handleClick = () => {
@@ -16,9 +16,11 @@ const Layout = ({ setShowSideField, children }) => {
     return <></>
   }
 
+  const color = tab % 3 === 1 ? "white" : "black"
+
   return (
     <main className="content__container">
-      <BackButton handleClick={handleClick} color="black" />
+      <BackButton handleClick={handleClick} color={color} />
       {children}
     </main>
   )

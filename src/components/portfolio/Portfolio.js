@@ -3,44 +3,34 @@ import { useStaticQuery, graphql } from "gatsby"
 import anime from "animejs"
 import Card from "./Card"
 import AnimationSVG from "../AnimationSVG"
-import "./portfolio.css"
 import ProjectPage from "./ProjectPage"
+import "./portfolio.css"
 
 const Portfolio = () => {
   const [flipped, setFlipped] = useState(false)
   const [post, setPost] = useState(null)
-  const query = useStaticQuery(
-    graphql`
-      {
-        allContentfulPortfolio {
-          edges {
-            node {
-              description {
-                description
-              }
-              link
-              slug
-              title
-              desktopImage {
-                fluid {
-                  ...GatsbyContentfulFluid
-                }
-              }
-              mobileImage {
-                fluid {
-                  ...GatsbyContentfulFluid
-                }
-              }
-              color
-              order
-            }
+
+  const query = useStaticQuery(graphql`
+    query {
+      allContentfulPortfolio {
+        nodes {
+          desktopImage {
+            gatsbyImageData
           }
+          color
+          description {
+            description
+          }
+          link
+          order
+          title
+          slug
         }
       }
-    `
-  )
-  
-  const data = query.allContentfulPortfolio.edges
+    }
+  `)
+
+  const data = query.allContentfulPortfolio.nodes
 
   const common = {
     targets: ".polymorph",
@@ -64,7 +54,7 @@ const Portfolio = () => {
     <>
       {flipped && <ProjectPage post={post} handleClick={handleClick} />}
       <div className="portfolio__container">
-        <AnimationSVG color={post?.node?.color} />
+        <AnimationSVG color={post?.color} />
         <ul className="portfolio__ul">
           {data.map((post, i) => {
             return (

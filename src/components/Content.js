@@ -19,7 +19,7 @@ const Content = ({ tab, setShowSideField }) => {
   }
 
   return (
-    <Layout setShowSideField={setShowSideField}>
+    <Layout setShowSideField={setShowSideField} tab={tab}>
       {conditionalRenderedContent()}
     </Layout>
   )

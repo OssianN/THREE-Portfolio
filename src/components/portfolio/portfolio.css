@@ -42,7 +42,6 @@
 }
 
 .portfolio__img {
-  position: absolute;
   width: 100%;
   border-radius: 2px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -50,6 +49,8 @@
 
 .project__container {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 0;
   left: 0;
   opacity: 0;
@@ -62,7 +63,7 @@
 .project__img {
   width: 100%;
   max-width: 700px;
-  margin: 0 auto 0;
+  margin: 0 auto;
   margin-top: 100px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
