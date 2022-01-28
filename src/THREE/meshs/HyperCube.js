@@ -4,16 +4,16 @@ import * as THREE from "three"
 
 const HyberCube = ({ handleMouseOver, handleMouseLeave, setTab, spinCube }) => {
   const geometry = useRef(null)
-  const triangles = 16000
+  const triangles = 7000
   const positions = []
   const normals = []
   const colors = []
 
   const color = new THREE.Color()
 
-  const n = 1,
+  const n = 1.3, // triangles size
     n2 = n / 2 // triangles spread in the cube
-  const d = 0.1,
+  const d = 0.2,
     d2 = d / 2 // individual triangle size
 
   const pA = new THREE.Vector3()

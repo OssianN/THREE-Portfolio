@@ -19,6 +19,12 @@ const ProjectPage = ({ post, handleClick }) => {
         <h1 className="project__title">{post.title}</h1>
         <p className="project__paragraph">{post.description.description}</p>
       </div>
+      <div
+        className="project--bottom-fade"
+        style={{
+          background: `linear-gradient(${post.color}00, ${post.color})`,
+        }}
+      ></div>
     </div>
   )
 }

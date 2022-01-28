@@ -44,6 +44,7 @@ const Skills = () => {
               top: 0,
               left: 0,
               zIndex: -1,
+              background: "#ff000018",
             }}
           >
             <OrbitControls />
@@ -53,7 +54,7 @@ const Skills = () => {
               <directionalLight position={[0, 10, 2]} intensity={1.3} />
               <pointLight castShadow position={[0, 5, 5]} />
               <SkillList skillList={skillList} />
-              <SkillsPlane color="#fff" />
+              <SkillsPlane color="#afafaf" />
             </Physics>
           </Canvas>
         </Suspense>

@@ -15,7 +15,7 @@ const SkillPlane = ({ color }) => {
   return (
     <mesh ref={ref} receiveShadow>
       <planeBufferGeometry attach="geometry" args={[170, 70]} />
-      <meshStandardMaterial attach="material" opacity={1} color={color} />
+      <meshStandardMaterial attach="material" color={color} />
     </mesh>
   )
 }

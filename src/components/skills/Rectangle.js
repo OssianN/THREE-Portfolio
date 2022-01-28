@@ -15,12 +15,12 @@ const Rectangle = ({ args, item, i }) => {
   const [ref, api] = useBox(() => ({
     mass: 1,
     position,
-    sleepSpeedLimit: 1.3,
+    sleepSpeedLimit: 0.3,
     args,
   }))
 
   const handleClick = () => {
-    api.applyForce([0, 0, -200], [0, 1, 0])
+    api.applyForce([300, 0, 0], [1, 0, 1])
   }
 
   return (
